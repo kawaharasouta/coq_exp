@@ -22,3 +22,26 @@ try tauto.
 
 
 Lemma NNPeirce : ~ ~ (((A -> B) -> A) -> A).
+
+tauto.
+
+Require Import Classical.
+
+Check NNPP.
+
+Lemma Peirce : ((A -> B) -> A) -> A.
+
+apply NNPP.
+
+tauto.
+
+Qed.
+
+Section club.
+
+Variables Scottish RedSocks WearKilt Married GoOutSunday : Prop.
+
+
+
+
+
