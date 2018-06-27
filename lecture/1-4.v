@@ -11,16 +11,23 @@ Lemma refl_if : forall x : D, (exists y, R x y) -> R x x.
 
 Check ex.
 
-intros x x_Rlinked.
+intro x.
+intro x_Rlinked.
 
 (*intro y.*)
 
 elim x_Rlinked.
 
-intros y Rxy.
+intro y.
+intro Rxy.
 
 apply R_transitive with y.
 
 assumption.
 
 apply R_symmetric.
+assumption.
+
+Qed.
+
+End R_sym_trans.
