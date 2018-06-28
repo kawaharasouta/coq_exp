@@ -7,3 +7,14 @@ Variable d : D.
 
 
 Lemma weird : (forall x:D, P x) -> exists a, P a.
+
+intro UnivP.
+
+exists d.
+trivial.
+
+Qed.
+
+
+Hypothesis EM : forall A : Prop, A \/ ~ A.
+
