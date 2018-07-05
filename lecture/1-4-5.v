@@ -37,3 +37,32 @@ symmetry.
 apply f10.*)
 
 Qed.
+
+
+(*1.5*)
+
+Variable U : Type.
+
+Definition set := U -> Prop.
+Definition element (x : U) (S : set) := S x.
+Definition subset (A B : set) := forall x : U, element x A -> element x B.
+
+Definition transitive (T : Type) (R : T -> T -> Prop) := forall x y z : T, R x y -> R y z -> R x z.
+
+Lemma subset_transitive : transitive set subset.
+
+(*unfold transitive.
+unfold subset.
+auto.*)
+
+unfold transitive.
+unfold subset at 2.
+
+intros.
+
+unfold subset in H.
+
+red.
+
+auto.
+Qed.
